@@ -1,0 +1,37 @@
+body {
+    background-color: #EFEFEF;
+}
+
+#stage {
+    width: 700px;
+    height: 400px;
+    margin:10% auto; 
+    background-color: #FFF;
+}
+.chu-ctn {
+    position: absolute;
+    z-index: 9; 
+}
+
+#chu-daiko {
+    width: 200px;
+    height: auto;
+    cursor: move; 
+    z-index: 10;
+}
+
+.add-chu {
+    position: relative; 
+    top: 40px;
+    left: 130px;
+    font-size: 20px;
+    padding: 10px 16px;
+    background-color: #FFF;
+    border-radius: 50%;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #BABABA;
+        color: #FFF;
+    }
+}
