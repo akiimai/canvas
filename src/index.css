@@ -1,12 +1,6 @@
 body {
   background-color: #EFEFEF;
-}
-
-#stage {
-  width: 700px;
-  height: 400px;
-  margin: 10% auto;
-  background-color: #FFF;
+  font-family: "Slabo 27px", sans-serif;
 }
 
 /* SIDEBAR */
@@ -17,10 +11,60 @@ body {
   top: 0;
   left: 0;
   z-index: 1;
-  /* background-color: #323232; */
-  background-color: #FFF;
+  background-color: #323232;
   overflow: hidden;
   padding-top: 20px;
+  box-shadow: 1px 1px 10px 5px #686868;
+}
+
+li {
+  list-style: none;
+  color: #FFF;
+  text-align: left;
+  padding: 5px;
+}
+
+input {
+  margin: 0 8px;
+  padding: 5px;
+}
+
+#clear {
+  position: fixed;
+  bottom: 30px;
+  padding: 8px 10px;
+  border-radius: 2px;
+  border: 1px solid #FFF;
+  background-color: #FFF;
+  color: #323232;
+}
+#clear:hover {
+  cursor: pointer;
+}
+
+/* STAGE */
+.size-input {
+  margin: 3% auto;
+}
+
+.size-btn {
+  background-color: #FFF;
+  border-radius: 5px;
+  border: 1px solid #FFF;
+  padding: 8px;
+}
+.size-btn:hover {
+  cursor: pointer;
+  background-color: #D8D8D8;
+  border: 1px solid #D8D8D8;
+  color: #FFF;
+}
+
+.text-field {
+  padding: 8px 5px;
+  border-radius: 5px;
+  border: 1px solid #D8D8D8;
+  margin: 4px;
 }
 
 /* CHUDAIKO */

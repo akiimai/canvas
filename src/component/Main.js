@@ -40,8 +40,6 @@ class Main extends Component {
     }
 
     render() {
-        console.log(this.state.width); 
-
         return (
             <div>
                 <div className="side-bar">
@@ -51,25 +49,19 @@ class Main extends Component {
                             <input type="color" id="color" onChange={this.handleColor} />
                         </li>
                         <li>
-                            <label htmlFor="weight">Stroke</label>
+                            <label htmlFor="weight">Stroke:</label>
                             <input type="number" id="weight" min="2" max="200" value={this.state.weight} onChange={this.handleWeight} />
                         </li>
                         <li>
-                            <button id="clear">Clear</button>
-                            {/* <P5Wrapper sketch={sketch} color={this.state.color} weight={this.state.weight}></P5Wrapper> */}
+                            <button id="clear"><i class='fas fa-trash-alt'></i></button>
                         </li>
                     </ul>
-
-                    {/* <div>
-                        <ChuDaiko />
-                    </div> */}
                 </div>
+                
                 <Settings selectHeight={this.handleHeight} selectWidth={this.handleWidth} />
 
-                {/* <div id="stage"> */}
                 <P5Wrapper sketch={sketch} height={this.state.height} width={this.state.width} color={this.state.color} weight={this.state.weight}></P5Wrapper>
-                {/* </div> */}
-                {/* <div id="stage" style={{ height: this.state.height, width: this.state.width }}></div> */}
+
             </div>
         );
     }

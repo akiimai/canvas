@@ -11,14 +11,14 @@ class Settings extends Component {
     }
 
     handleHeight = (e) => {
-        let height = e.target.value * 40;
+        let height = e.target.value * 30;
         this.setState({
             height
         })
     };
 
     handleWidth = (e) => {
-        let width = e.target.value * 40;
+        let width = e.target.value * 30;
         this.setState({
             width
         })
@@ -33,13 +33,13 @@ class Settings extends Component {
 
     render() {
         return (
-            <div>
+            <div className="size-input">
                 <form>
                     <label> Stage Size:
-                        <input type="text" onChange={this.handleWidth} placeholder="width in feet"></input>
-                        <input type="text" onChange={this.handleHeight} placeholder="height in feet"></input>
+                        <input className="text-field" type="text" onChange={this.handleWidth} placeholder="width in feet"></input>
+                        <input className="text-field" type="text" onChange={this.handleHeight} placeholder="height in feet"></input>
                     </label>
-                    <button onClick={e => this.handleChange(e)}>Submit</button>
+                    <button className="size-btn" onClick={e => this.handleChange(e)}>Submit</button>
                 </form>
             </div>
         )

@@ -1,14 +1,10 @@
 $color-main: #FFF;
+$roboto-font: 'Roboto', sans-serif;
+$slabo-font: 'Slabo 27px', sans-serif;
 
 body {
     background-color: #EFEFEF;
-}
-
-#stage {
-    width: 700px;
-    height: 400px;
-    margin:10% auto; 
-    background-color: $color-main;
+    font-family: $slabo-font;
 }
 
 /* SIDEBAR */
@@ -22,8 +18,65 @@ body {
     background-color: #323232;
     overflow: hidden;
     padding-top: 20px;
+    box-shadow: 1px 1px 10px 5px #686868;
 }
 
+li {
+    list-style: none;
+    color: #FFF;
+    text-align: left; 
+    padding: 5px;
+}
+
+input {
+    margin: 0 8px;
+    padding: 5px;
+}
+
+#clear {
+    position: fixed;
+    bottom: 30px;
+    padding: 8px 10px;
+    border-radius: 2px;
+    border: 1px solid #FFF;
+    background-color: #FFF;
+    color: #323232;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+/* STAGE */
+
+#defaultCanvas0 {
+    // box-shadow: 1px 1px 8px 1px #D8D8D8;
+}
+
+.size-input {
+    margin: 3% auto; 
+}
+
+.size-btn {
+    background-color: #FFF;
+    border-radius: 5px;
+    border: 1px solid #FFF;
+    padding: 8px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #D8D8D8;
+        border: 1px solid #D8D8D8;
+        color: #FFF;
+    }
+}
+
+.text-field {
+    padding: 8px 5px;
+    border-radius: 5px;
+    border: 1px solid #D8D8D8;
+    margin: 4px;
+}
 
 /* CHUDAIKO */
 .chu-ctn {

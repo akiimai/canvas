@@ -7,7 +7,9 @@ export default function sketch(p) {
         const weight = props.weight;
         const clear = document.getElementById('clear');
 
-        console.log(props);
+        p.createCanvas(props.width, props.height);
+        p.background(255);
+
         p.setup = () => {
             p.createCanvas(props.width, props.height);
             p.background(255);
