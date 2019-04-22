@@ -9,6 +9,21 @@ body {
   background-color: #FFF;
 }
 
+/* SIDEBAR */
+.side-bar {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  /* background-color: #323232; */
+  background-color: #FFF;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+/* CHUDAIKO */
 .chu-ctn {
   position: absolute;
   z-index: 9;

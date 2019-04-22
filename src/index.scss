@@ -1,3 +1,5 @@
+$color-main: #FFF;
+
 body {
     background-color: #EFEFEF;
 }
@@ -6,8 +8,24 @@ body {
     width: 700px;
     height: 400px;
     margin:10% auto; 
-    background-color: #FFF;
+    background-color: $color-main;
 }
+
+/* SIDEBAR */
+.side-bar {
+    height: 100%;
+    width: 300px;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    z-index: 1;
+    background-color: #323232;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+
+/* CHUDAIKO */
 .chu-ctn {
     position: absolute;
     z-index: 9; 
@@ -26,12 +44,12 @@ body {
     left: 130px;
     font-size: 20px;
     padding: 10px 16px;
-    background-color: #FFF;
+    background-color: $color-main;
     border-radius: 50%;
 
     &:hover {
         cursor: pointer;
         background-color: #BABABA;
-        color: #FFF;
+        color: $color-main;
     }
 }
