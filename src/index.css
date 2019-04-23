@@ -14,7 +14,7 @@ body {
   background-color: #323232;
   overflow: hidden;
   padding-top: 20px;
-  box-shadow: 1px 1px 10px 5px #686868;
+  box-shadow: 1px 1px 8px 5px #686868;
 }
 
 li {
@@ -71,6 +71,12 @@ input {
 .chu-ctn {
   position: absolute;
   z-index: 9;
+}
+
+.chu-item {
+  position: absolute;
+  z-index: 2;
+  left: 500px;
 }
 
 #chu-daiko {
