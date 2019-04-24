@@ -13,7 +13,12 @@ class Main extends Component {
             height: 400,
             color: '#000',
             weight: 3,
-            chu: []
+            chu: [],
+            selectedChu: "",
+            pos1: 0,
+            pos2: 0,
+            pos3: 0,
+            pos4: 0
         }
     }
 
@@ -34,7 +39,7 @@ class Main extends Component {
             color: e.target.value
         })
     }
-    
+
     handleWeight = (e) => {
         this.setState({
             weight: e.target.value
@@ -49,9 +54,53 @@ class Main extends Component {
         })
     }
 
+    moveChu = (e, index) => {
+        e.preventDefault();
+        let chuItem = "chu-" + index;
+        let selectedChu = document.getElementById(chuItem);
+        this.setState({
+            selectedChu,
+            pos3: e.clientX,
+            pos4: e.clientY
+        })
+
+        selectedChu.onmouseup = this.stopDrag;
+        selectedChu.onmousemove = this.elementDrag;
+    }
+
+    elementDrag = (e) => {
+        console.log('moving')
+        e.preventDefault();
+        let pos1 = this.state.pos3 - e.clientX;
+        let pos2 = this.state.pos4 - e.clientY;
+        let pos3 = this.state.pos3;
+        let pos4 = this.state.pos4;
+        let selectedChu = this.state.selectedChu;
+
+        this.setState({
+            pos1,
+            pos2,
+            pos3,
+            pos4
+        })
+
+        selectedChu.style.top = (selectedChu.offsetTop - pos2) + "px";
+        selectedChu.style.left = (selectedChu.offsetLeft - pos1) + "px";
+    }
+
+    stopDrag = (e) => {
+        console.log('stopping')
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+
     render() {
         let chu = this.state.chu.map((item, index) => {
-            return <div className="chu-item" key={index}>{item}</div>
+            let chuItem = "chu-" + index;
+            return <div id={chuItem} className="chu-item" key={index} onMouseDown={(e) => this.moveChu(e, index)}>
+                <span><i className="fas fa-times"></i></span>
+                {item}
+            </div>
         });
 
         return (
@@ -76,7 +125,7 @@ class Main extends Component {
 
                     <button onClick={this.addChu}>Chu Add</button>
                 </div>
-                
+
                 <Settings selectHeight={this.handleHeight} selectWidth={this.handleWidth} />
 
                 <div id="chu-ctn">
