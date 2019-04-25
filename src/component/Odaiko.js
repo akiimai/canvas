@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import image1 from '../images/cat.png'
+import image1 from '../images/dog.png'
 
-class ChuDaiko extends Component {
+class Odaiko extends Component {
     render() {
         return (
             <div className="chu-test">
@@ -11,4 +11,4 @@ class ChuDaiko extends Component {
     }
 }
 
-export default ChuDaiko; 
+export default Odaiko; 

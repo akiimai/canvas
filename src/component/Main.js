@@ -25,16 +25,14 @@ class Main extends Component {
     }
 
     sideBar = () => {
-        this.setState({
-            sidebar: false
-        })
+        let sideBar = document.getElementById('side-bar');
 
-        let sideBar = document.getElementById('side-bar'); 
-
-        if (!this.state.sidebar) {
-            sideBar.classList.add("open")
-        } else {
-            sideBar.classList.remove("open")
+        if (this.state.sidebar === true) {
+            this.setState({ sidebar: false })
+            sideBar.classList += " close"
+        } else if (this.state.sidebar === false) {
+            this.setState({ sidebar: true })
+            sideBar.classList.remove("close")
         }
     }
 
@@ -129,13 +127,13 @@ class Main extends Component {
             </div>
         });
 
-        let sidebar = this.state.sidebar ? <span onClick={this.sideBar}><i className='fas fa-times'></i></span>
-        : <span onClick={this.sideBar}><i className='fas fa-arrow-right'></i></span>
+        let sidebar = this.state.sidebar ? <span className="sidebar-btn" onClick={this.sideBar}><i className='fas fa-times'></i></span>
+            : <span className="sidebar-btn" onClick={this.sideBar}><i className='fas fa-arrow-right'></i></span>
 
         return (
             <div>
-                <div id="side-bar">
-                    <div>
+                <div id="side-bar" className="side-bar">
+                    <div className="side">
                         {sidebar}
                     </div>
                     <ul>
@@ -148,11 +146,21 @@ class Main extends Component {
                             <input className="stroke-type" type="number" id="weight" min="2" max="200" value={this.state.weight} onChange={this.handleWeight} />
                         </li>
                         <li>
-                            <button id="clear"><i className='fas fa-trash-alt'></i></button>
+                            <button id="clear-btn"><i className='fas fa-trash-alt'></i></button>
                         </li>
                     </ul>
 
-                    <button onClick={this.addChu}>Chu Add</button>
+                    <div>
+                        <button onClick={this.addChu}>Add Image 1</button>
+                    </div>
+
+                    <div>
+                        <button onClick={this.addChu}>Add Image 2</button>
+                    </div>
+
+                    <div>
+                        <button onClick={this.addChu}>Add Image 3</button>
+                    </div>
                 </div>
 
                 <Settings selectHeight={this.handleHeight} selectWidth={this.handleWidth} />

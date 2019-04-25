@@ -13,7 +13,7 @@ export default function sketch(p) {
 
         const colorInput = props.color;
         const weight = props.weight;
-        const clear = document.getElementById('clear');
+        const clear = document.getElementById('clear-btn');
 
         p.draw = () => {
             p.noFill();

@@ -7,18 +7,33 @@ body {
     font-family: $slabo-font;
 }
 
-/* SIDEBAR */
-#side-bar {
+/* ---- SIDEBAR ----- */
+.side-bar {
     height: 100%;
     width: 300px;
     position: fixed; 
-    top: 0; 
+    top: 0;
     left: 0;
-    z-index: 1;
-    background-color: #323232;
     overflow: hidden;
     padding-top: 20px;
-    box-shadow: 1px 1px 8px 5px #686868;
+    background-color: #323232;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+
+.close {
+    position: fixed; 
+    overflow: hidden;
+    top: 0; 
+    left: -260px;
+    z-index: 1;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+
+.side {
+    text-align: right; 
+    padding-right: 15px;
 }
 
 li {
@@ -37,13 +52,13 @@ input {
     display: block;
 }
 
-#clear {
+#clear-btn {
     position: fixed;
     bottom: 30px;
     padding: 8px 10px;
     border-radius: 2px;
-    // border: 1px solid #FFF;
-    // background-color: #FFF;
+    border: 1px solid #FFF;
+    background-color: #FFF;
     color: #323232;
 
     &:hover {
@@ -53,9 +68,15 @@ input {
 
 .fas {
     color: #FFF;
+    cursor: pointer;
 }
 
-/* STAGE */
+button {
+    cursor: pointer;
+}
+
+
+/* ----- STAGE ----- */
 .size-input {
     margin: 3% auto; 
 }
@@ -81,7 +102,7 @@ input {
     margin: 4px;
 }
 
-/* CHUDAIKO */
+/* ----- CHUDAIKO ----- */
 .chu-ctn {
     position: absolute;
     z-index: 9; 
@@ -104,4 +125,12 @@ input {
     &:hover {
         cursor: pointer;
     }
+}
+
+#test {
+    border: 2px solid;
+    padding: 20px; 
+    width: 300px;
+    resize: both;
+    overflow: auto;
 }
