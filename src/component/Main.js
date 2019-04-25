@@ -9,6 +9,7 @@ class Main extends Component {
         super(props)
 
         this.state = {
+            sidebar: true,
             width: 700,
             height: 400,
             color: '#000',
@@ -20,6 +21,20 @@ class Main extends Component {
             pos2: 0,
             pos3: 0,
             pos4: 0
+        }
+    }
+
+    sideBar = () => {
+        this.setState({
+            sidebar: false
+        })
+
+        let sideBar = document.getElementById('side-bar'); 
+
+        if (!this.state.sidebar) {
+            sideBar.classList.add("open")
+        } else {
+            sideBar.classList.remove("open")
         }
     }
 
@@ -114,20 +129,23 @@ class Main extends Component {
             </div>
         });
 
+        let sidebar = this.state.sidebar ? <span onClick={this.sideBar}><i className='fas fa-times'></i></span>
+        : <span onClick={this.sideBar}><i className='fas fa-arrow-right'></i></span>
+
         return (
             <div>
-                <div className="side-bar">
+                <div id="side-bar">
                     <div>
-                        <span><i className='fas fa-times'></i></span>
+                        {sidebar}
                     </div>
                     <ul>
                         <li>
                             <label htmlFor="color">Color:</label>
-                            <input type="color" id="color" onChange={this.handleColor} />
+                            <input className="stroke-type" type="color" id="color" onChange={this.handleColor} />
                         </li>
                         <li>
                             <label htmlFor="weight">Stroke:</label>
-                            <input type="number" id="weight" min="2" max="200" value={this.state.weight} onChange={this.handleWeight} />
+                            <input className="stroke-type" type="number" id="weight" min="2" max="200" value={this.state.weight} onChange={this.handleWeight} />
                         </li>
                         <li>
                             <button id="clear"><i className='fas fa-trash-alt'></i></button>

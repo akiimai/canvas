@@ -35,9 +35,9 @@ class Settings extends Component {
         return (
             <div className="size-input">
                 <form>
-                    <label> Stage Size:
-                        <input className="text-field" type="text" onChange={this.handleWidth} placeholder="width in feet"></input>
-                        <input className="text-field" type="text" onChange={this.handleHeight} placeholder="height in feet"></input>
+                    <label> Canvas Size:
+                        <input className="text-field" type="text" onChange={this.handleWidth} placeholder="width"></input>
+                        <input className="text-field" type="text" onChange={this.handleHeight} placeholder="height"></input>
                     </label>
                     <button className="size-btn" onClick={e => this.handleChange(e)}>Submit</button>
                 </form>

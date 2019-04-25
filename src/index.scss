@@ -8,7 +8,7 @@ body {
 }
 
 /* SIDEBAR */
-.side-bar {
+#side-bar {
     height: 100%;
     width: 300px;
     position: fixed; 
@@ -29,8 +29,12 @@ li {
 }
 
 input {
-    margin: 0 8px;
+    margin: 5px 0;
     padding: 5px;
+}
+
+.stroke-type {
+    display: block;
 }
 
 #clear {
@@ -38,8 +42,8 @@ input {
     bottom: 30px;
     padding: 8px 10px;
     border-radius: 2px;
-    border: 1px solid #FFF;
-    background-color: #FFF;
+    // border: 1px solid #FFF;
+    // background-color: #FFF;
     color: #323232;
 
     &:hover {
@@ -47,12 +51,11 @@ input {
     }
 }
 
-/* STAGE */
-
-#defaultCanvas0 {
-    // box-shadow: 1px 1px 8px 1px #D8D8D8;
+.fas {
+    color: #FFF;
 }
 
+/* STAGE */
 .size-input {
     margin: 3% auto; 
 }
@@ -95,22 +98,6 @@ input {
     height: auto;
     cursor: move; 
     z-index: 10;
-}
-
-.add-chu {
-    position: relative; 
-    top: 40px;
-    left: 130px;
-    font-size: 20px;
-    padding: 10px 16px;
-    background-color: $color-main;
-    border-radius: 50%;
-
-    &:hover {
-        cursor: pointer;
-        background-color: #BABABA;
-        color: $color-main;
-    }
 }
 
 .delete-chu {

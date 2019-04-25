@@ -15,8 +15,6 @@ export default function sketch(p) {
         const weight = props.weight;
         const clear = document.getElementById('clear');
 
-        console.log(props.chuMove)
-
         p.draw = () => {
             p.noFill();
             if (p.mouseIsPressed) {
