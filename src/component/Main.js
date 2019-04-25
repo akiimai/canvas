@@ -15,6 +15,7 @@ class Main extends Component {
             weight: 3,
             chu: [],
             selectedChu: "",
+            chuMove: false,
             pos1: 0,
             pos2: 0,
             pos3: 0,
@@ -64,24 +65,23 @@ class Main extends Component {
             pos4: e.clientY
         })
 
-        selectedChu.onmouseup = this.stopDrag;
         selectedChu.onmousemove = this.elementDrag;
     }
 
     elementDrag = (e) => {
-        console.log('moving')
         e.preventDefault();
         let pos1 = this.state.pos3 - e.clientX;
         let pos2 = this.state.pos4 - e.clientY;
-        let pos3 = this.state.pos3;
-        let pos4 = this.state.pos4;
+        let pos3 = e.clientX;
+        let pos4 = e.clientY;
         let selectedChu = this.state.selectedChu;
 
         this.setState({
             pos1,
             pos2,
             pos3,
-            pos4
+            pos4,
+            chuMove: true
         })
 
         selectedChu.style.top = (selectedChu.offsetTop - pos2) + "px";
@@ -89,16 +89,27 @@ class Main extends Component {
     }
 
     stopDrag = (e) => {
-        console.log('stopping')
-        document.onmouseup = null;
-        document.onmousemove = null;
+        let selectedChu = this.state.selectedChu;
+        selectedChu.onmouseup = null;
+        selectedChu.onmousemove = null;
+
+        this.setState({
+            chuMove: false
+        })
+    }
+
+    deleteChu = (e, index) => {
+        let chuItem = "chu-" + index;
+        let selectedChu = document.getElementById(chuItem);
+
+        selectedChu.innerHTML = "<div></div>";
     }
 
     render() {
         let chu = this.state.chu.map((item, index) => {
             let chuItem = "chu-" + index;
-            return <div id={chuItem} className="chu-item" key={index} onMouseDown={(e) => this.moveChu(e, index)}>
-                <span><i className="fas fa-times"></i></span>
+            return <div id={chuItem} className="chu-item" key={index} onMouseUp={this.stopDrag} onMouseDown={(e) => this.moveChu(e, index)}>
+                <span className="delete-chu" onClick={(e) => this.deleteChu(e, index)}><i className="fas fa-times"></i></span>
                 {item}
             </div>
         });
@@ -132,8 +143,7 @@ class Main extends Component {
                     {chu}
                 </div>
 
-                <P5Wrapper sketch={sketch} height={this.state.height} width={this.state.width} color={this.state.color} weight={this.state.weight}></P5Wrapper>
-
+                <P5Wrapper sketch={sketch} height={this.state.height} width={this.state.width} color={this.state.color} weight={this.state.weight} chuMove={this.state.chuMove}></P5Wrapper>
             </div>
         );
     }

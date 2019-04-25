@@ -3,10 +3,6 @@ export default function sketch(p) {
     let currentPath = [];
 
     p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
-        const colorInput = props.color;
-        const weight = props.weight;
-        const clear = document.getElementById('clear');
-
         p.createCanvas(props.width, props.height);
         p.background(255);
 
@@ -15,17 +11,33 @@ export default function sketch(p) {
             p.background(255);
         }
 
+        const colorInput = props.color;
+        const weight = props.weight;
+        const clear = document.getElementById('clear');
+
+        console.log(props.chuMove)
+
         p.draw = () => {
             p.noFill();
             if (p.mouseIsPressed) {
-                const point = {
-                    x: p.mouseX,
-                    y: p.mouseY,
-                    color: colorInput,
-                    weight: weight
-                };
-                currentPath.push(point);
-            }
+                if (props.chuMove === false) {
+                    const point = {
+                        x: p.mouseX,
+                        y: p.mouseY,
+                        color: colorInput,
+                        weight: weight
+                    };
+                    currentPath.push(point);
+                } else if (props.chuMove === true) {
+                    const point = {
+                        x: p.mouseX,
+                        y: p.mouseY,
+                        color: "#FFF",
+                        weight: 0
+                    };
+                    currentPath.push(point);
+                }
+            };
 
             paths.forEach(path => {
                 p.beginShape();
@@ -49,4 +61,4 @@ export default function sketch(p) {
         });
 
     };
-}
+};

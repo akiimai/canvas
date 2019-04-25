@@ -112,3 +112,9 @@ input {
         color: $color-main;
     }
 }
+
+.delete-chu {
+    &:hover {
+        cursor: pointer;
+    }
+}

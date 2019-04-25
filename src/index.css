@@ -101,4 +101,8 @@ input {
   color: #FFF;
 }
 
+.delete-chu:hover {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=index.css.map */
