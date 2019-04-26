@@ -118,11 +118,18 @@ class Main extends Component {
         selectedChu.innerHTML = "<div></div>";
     }
 
+    resizeChu = () => {
+
+    }
+
     render() {
         let chu = this.state.chu.map((item, index) => {
             let chuItem = "chu-" + index;
             return <div id={chuItem} className="chu-item" key={index} onMouseUp={this.stopDrag} onMouseDown={(e) => this.moveChu(e, index)}>
-                <span className="delete-chu" onClick={(e) => this.deleteChu(e, index)}><i className="fas fa-times"></i></span>
+                <div className="img-alt">
+                    <span className="delete-chu" onClick={(e) => this.deleteChu(e, index)}><i className="fas fa-times chu-alt"></i></span>
+                    <span className="resize-chu" onClick={(e) => this.resizeChu(e, index)}><i className="fas fa-expand chu-alt"></i></span>
+                </div>
                 {item}
             </div>
         });
@@ -150,16 +157,18 @@ class Main extends Component {
                         </li>
                     </ul>
 
-                    <div>
-                        <button onClick={this.addChu}>Add Image 1</button>
-                    </div>
+                    <div id="button-bar">
+                        <div>
+                            <button onClick={this.addChu}>Add Image 1</button>
+                        </div>
 
-                    <div>
-                        <button onClick={this.addChu}>Add Image 2</button>
-                    </div>
+                        <div>
+                            <button onClick={this.addChu}>Add Image 2</button>
+                        </div>
 
-                    <div>
-                        <button onClick={this.addChu}>Add Image 3</button>
+                        <div>
+                            <button onClick={this.addChu}>Add Image 3</button>
+                        </div>
                     </div>
                 </div>
 

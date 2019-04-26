@@ -13,8 +13,9 @@ body {
   overflow: hidden;
   padding-top: 20px;
   background-color: #323232;
-  -webkit-transition: all ease 0.5s;
-  transition: all ease 0.5s;
+  box-shadow: 1px 1px 10px 1px rgba(30, 30, 30, 0.7);
+  -webkit-transition: all ease 0.8s;
+  transition: all ease 0.8s;
 }
 
 .close {
@@ -23,8 +24,8 @@ body {
   top: 0;
   left: -260px;
   z-index: 1;
-  -webkit-transition: all ease 0.5s;
-  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.8s;
+  transition: all ease 0.8s;
 }
 
 .side {
@@ -42,10 +43,16 @@ li {
 input {
   margin: 5px 0;
   padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #323232;
 }
 
 .stroke-type {
   display: block;
+}
+
+#color {
+  cursor: pointer;
 }
 
 #clear-btn {
@@ -66,8 +73,33 @@ input {
   cursor: pointer;
 }
 
+.fa-trash-alt {
+  color: #323232;
+}
+
+.fa-times, .fa-expand {
+  color: #FFF;
+  padding-left: 20px;
+}
+
 button {
   cursor: pointer;
+  margin: 8px 0;
+  background-color: #FFF;
+  border: 1px solid #FFF;
+  padding: 8px;
+  border-radius: 2px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #D8D8D8;
+  border: 1px solid #D8D8D8;
+  color: #FFF;
+}
+
+#button-bar {
+  text-align: left;
+  padding-left: 45px;
 }
 
 /* ----- STAGE ----- */
@@ -118,12 +150,8 @@ button {
   cursor: pointer;
 }
 
-#test {
-  border: 2px solid;
-  padding: 20px;
-  width: 300px;
-  resize: both;
-  overflow: auto;
+.chu-alt {
+  color: #323232;
 }
 
 /*# sourceMappingURL=index.css.map */
